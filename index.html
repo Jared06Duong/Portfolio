@@ -1,216 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Jared Duong | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="favicon.png?v=2" type="image/png">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <meta name="description" content="Jared Duong — Computer Engineering student. Projects in software, embedded systems, and automation." />
+
+  <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="Jared_Duong_Tech_Resume.pdf" target="_blank">Resume</a></li>
-    </ul>
-  </nav>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Sections -->
-  <section id="home">
-    <img src="Profile_Picture.jpg" alt="Jared Duong" class="profile-photo">
-    <h1>
-      Hi, I’m Jared
-    </h1>
-    <p>Computer Engineering at the University of Guelph </p>
-    <a href="#contact" class="contact-btn">Contact Me</a>
-  </section>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a very ambitious software developer with a unique background that has prepared me to be a team player who communicates effectively, faces problems analytically, and has the technical skills to tackle any challenge.
-    </p>
-    <div class="about-skills about-skills-row">
-      <div>
-        <h3>Languages</h3>
-        <ul>
-          <li>Java</li>
-          <li>Python</li>
-          <li>C</li>
-          <li>C++</li>
-          <li>SQL</li>
-          <li>C#</li>
-          <li>Arduino</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JS</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Frameworks &amp; Engines</h3>
-        <ul>
-          <li>Unity</li>
-          <li>.NET</li>
-          <li>JUnit</li>
-          <li>Pygame</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Developer Tools</h3>
-        <ul>
-          <li>IntelliJ IDEA</li>
-          <li>CLion</li>
-          <li>Visual Studio</li>
-          <li>Visual Studio Code</li>
-          <li>GitHub</li>
-          <li>Unity Editor</li>
-          <li>SolidWorks</li>
-          <li>Fusion 360</li>
-          <li>AutoCAD</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Libraries</h3>
-        <ul>
-          <li>pandas</li>
-          <li>NumPy</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-<section id="experience">
-  <h2>Experience</h2>
-
-  <div class="experience-item">
-    <div class="experience-logo-wrapper">
-      <img src="images/hartmann-logo.jpg" alt="Hartmann Logo" class="experience-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="experience-fallback"></div>
-    </div>
-    <div class="experience-content">
-      <h3>Production Engineering Intern</h3>
-      <p class="company">Hartmann North America &ndash; Brantford, ON</p>
-      <p class="dates">May 2025 &ndash; Aug 2025</p>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Primary navigation">
       <ul>
-        <li>Operated and monitored automated manufacturing machines, interpreting sensor data and panel outputs to resolve issues, helping cut equipment downtime by 15%.</li>
-        <li>Applied embedded systems knowledge and data-driven analysis to improve production monitoring, contributing to a 10% increase in process consistency and output quality.</li>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="Jared_Duong_Tech_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
       </ul>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div class="experience-item">
-    <div class="experience-logo-wrapper">
-      <img src="images/mcmaster-logo.jpg" alt="McMaster Logo" class="experience-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="experience-fallback"></div>
-    </div>
-    <div class="experience-content">
-      <h3>Game Developer</h3>
-      <p class="company">McMaster University &ndash; Hamilton, ON</p>
-      <p class="dates">Apr 2023 &ndash; Jun 2023</p>
-      <ul>
-        <li>Collaborated with faculty and peers to design educational tools using C# in Unity, improving student engagement through gamified learning mechanics.</li>
-        <li>Designed and developed responsive web interfaces using HTML, CSS, and JavaScript, ensuring compatibility and engagement for 200+ users across devices.</li>
-        <li>Implemented modular and reusable code structures to streamline development, improve maintainability, and support future enhancements.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+  <main id="main">
+    <section id="home" class="section">
+      <img src="Profile_Picture.jpg" alt="Portrait of Jared Duong" class="profile-photo" loading="lazy" decoding="async" />
+      <h1>Hi, I’m Jared</h1>
+      <p>Computer Engineering at the University of Guelph</p>
+      <a href="#contact" class="contact-btn">Contact Me</a>
+    </section>
 
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I build software and system-focused projects, and I like work that mixes coding, data, and real hardware.
+        </p>
 
+        <div class="about-skills about-skills-row">
+          <div>
+            <h3>Languages</h3>
+            <ul>
+              <li>Java</li><li>Python</li><li>C</li><li>C++</li><li>SQL</li>
+              <li>C#</li><li>Arduino</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+          </div>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <p>Show off your coding projects here with links to GitHub.</p>
+          <div>
+            <h3>Frameworks &amp; Tools</h3>
+            <ul>
+              <li>Unity</li><li>.NET</li><li>JUnit</li><li>Pygame</li>
+            </ul>
+          </div>
 
-  <div class="projects-grid">
-    <!-- Project 1 -->
-    <div class="project-box">
-      <h3>Project 1 Title</h3>
-      <p>Short description goes here.</p>
-      <a href="#">GitHub</a> | <a href="#">Live Demo</a>
-    </div>
+          <div>
+            <h3>Developer Tools</h3>
+            <ul>
+              <li>IntelliJ IDEA</li><li>CLion</li><li>Visual Studio</li><li>VS Code</li>
+              <li>GitHub</li><li>SolidWorks</li><li>Fusion 360</li><li>AutoCAD</li>
+            </ul>
+          </div>
 
-    <!-- Project 2 -->
-    <div class="project-box">
-      <h3>Project 2 Title</h3>
-      <p>Short description goes here.</p>
-      <a href="#">GitHub</a> | <a href="#">Live Demo</a>
-    </div>
+          <div>
+            <h3>Libraries</h3>
+            <ul>
+              <li>pandas</li><li>NumPy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Project 3 -->
-    <div class="project-box">
-      <h3>Project 3 Title</h3>
-      <p>Short description goes here.</p>
-      <a href="#">GitHub</a> | <a href="#">Live Demo</a>
-    </div>
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experience</h2>
 
-    <!-- Project 4 -->
-    <div class="project-box">
-      <h3>Project 4 Title</h3>
-      <p>Short description goes here.</p>
-      <a href="#">GitHub</a> | <a href="#">Live Demo</a>
-    </div>
+        <div class="experience-item">
+          <img src="images/hartmann-logo.jpg" alt="Hartmann logo" class="experience-logo" loading="lazy" decoding="async" />
+          <div class="experience-content">
+            <h3>Production Engineering Intern</h3>
+            <p class="company">Hartmann North America – Brantford, ON</p>
+            <p class="dates">May 2025 – Aug 2025</p>
+            <ul>
+              <li>Operated and monitored automated manufacturing machines, reading sensor/panel data to resolve issues; cut downtime by 15%.</li>
+              <li>Used data checks to improve production monitoring; improved process consistency and output quality by ~10%.</li>
+            </ul>
+          </div>
+        </div>
 
-    <!-- Project 5 -->
-    <div class="project-box">
-      <h3>Project 5 Title</h3>
-      <p>Short description goes here.</p>
-      <a href="#">GitHub</a> | <a href="#">Live Demo</a>
-    </div>
+        <div class="experience-item">
+          <img src="images/mcmaster-logo.jpg" alt="McMaster logo" class="experience-logo" loading="lazy" decoding="async" />
+          <div class="experience-content">
+            <h3>Game Developer</h3>
+            <p class="company">McMaster University – Hamilton, ON</p>
+            <p class="dates">Apr 2023 – Jun 2023</p>
+            <ul>
+              <li>Built educational tools in Unity (C#), working with faculty and peers to improve student engagement.</li>
+              <li>Built responsive web UI with HTML/CSS/JavaScript for 200+ users across devices.</li>
+              <li>Wrote modular, reusable code to simplify updates and new features.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Project 6 -->
-    <div class="project-box">
-      <h3>Project 6 Title</h3>
-      <p>Short description goes here.</p>
-      <a href="#">GitHub</a> | <a href="#">Live Demo</a>
-    </div>
-  </div>
-</section>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <p class="muted">Add 3–4 real projects here (GitHub links matter most).</p>
 
+        <div class="projects-grid">
+          <div class="project-box">
+            <h3>Project Title</h3>
+            <p>One sentence: what problem you solved and what you built.</p>
+            <a href="#">GitHub</a>
+          </div>
+          <div class="project-box">
+            <h3>Project Title</h3>
+            <p>One sentence: what problem you solved and what you built.</p>
+            <a href="#">GitHub</a>
+          </div>
+          <div class="project-box">
+            <h3>Project Title</h3>
+            <p>One sentence: what problem you solved and what you built.</p>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">Use the icons or the form.</p>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Thank you for your interest in getting in touch!</p>
-    <p>Please use the icons below to reach out to me directly on your preferred platform.</p>
-    <p>Email: jaredduong04@gmail.com</p>
-    <div class="contact-icons">
-      <a href="mailto:jaredduong04@gmail.com" title="Email" target="_blank" rel="noopener">
-        <img src="mail.svg" alt="Email" class="icon">
-      </a>
-      <a href="https://github.com/Jared06Duong" title="GitHub" target="_blank" rel="noopener">
-        <img src="github.svg" alt="GitHub" class="icon">
-      </a>
-      <a href="https://www.linkedin.com/in/jared-t-duong/" title="LinkedIn" target="_blank" rel="noopener">
-        <img src="linkedin.svg" alt="LinkedIn" class="icon">
-      </a>
-    </div>
-    <br>
-    <form class="contact-form" action="https://formspree.io/f/xqadpbgp" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-    <br>
-    <p>
-      I value open communication and welcome any inquiries, feedback, or collaboration opportunities.<br>
-      Please don't hesitate to get in touch with me by filling out the contact form or using the links above.
-    </p>
-  </section>
+        <div class="contact-icons">
+          <a href="mailto:jaredduong04@gmail.com" aria-label="Email Jared" title="Email">
+            <img src="mail.svg" alt="" class="icon" />
+          </a>
+          <a href="https://github.com/Jared06Duong" aria-label="Jared on GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
+            <img src="github.svg" alt="" class="icon" />
+          </a>
+          <a href="https://www.linkedin.com/in/jared-t-duong/" aria-label="Jared on LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <img src="linkedin.svg" alt="" class="icon" />
+          </a>
+        </div>
 
-  <footer>
-    <p>© 2025 Jared Duong | Made with HTML, CSS and JS</p>
+        <form class="contact-form" action="https://formspree.io/f/xqadpbgp" method="POST">
+          <input type="text" name="name" placeholder="Your Name" autocomplete="name" required />
+          <input type="email" name="email" placeholder="Your Email" autocomplete="email" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Jared Duong | Made with HTML, CSS, and JavaScript</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
