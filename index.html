@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Jared Duong | Portfolio</title>
-  <meta name="description" content="Jared Duong — Computer Engineering student. Projects in software, embedded systems, and automation." />
+  <meta
+    name="description"
+    content="Jared Duong — Computer Engineering (Co-op) student at the University of Guelph. Embedded systems, FPGA/VHDL, software–hardware integration, and applied engineering design."
+  />
 
   <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
 
@@ -33,54 +36,109 @@
   </header>
 
   <main id="main">
+    <!-- HOME -->
     <section id="home" class="section">
-      <img src="Profile_Picture.jpg" alt="Portrait of Jared Duong" class="profile-photo" loading="lazy" decoding="async" />
-      <h1>Hi, I’m Jared</h1>
-      <p>Computer Engineering at the University of Guelph</p>
+      <img
+        src="Profile_Picture.jpg"
+        alt="Portrait of Jared Duong"
+        class="profile-photo"
+        loading="lazy"
+        decoding="async"
+      />
+      <h1>Hi, I’m Jared Duong</h1>
+      <p>Computer Engineering (Co-op) at the University of Guelph</p>
       <a href="#contact" class="contact-btn">Contact Me</a>
     </section>
 
-    <section id="about" class="section">
+    <!-- ABOUT -->
+    <section id="about" class="section about-section">
       <div class="container">
-        <h2>About Me</h2>
-        <p>
-          I build software and system-focused projects, and I like work that mixes coding, data, and real hardware.
-        </p>
+        <div class="about-box">
+          <h2>About Me</h2>
 
-        <div class="about-skills about-skills-row">
-          <div>
-            <h3>Languages</h3>
-            <ul>
-              <li>Java</li><li>Python</li><li>C</li><li>C++</li><li>SQL</li>
-              <li>C#</li><li>Arduino</li><li>HTML</li><li>CSS</li><li>JavaScript</li>
-            </ul>
+          <div class="about-text">
+            <p>
+              I’m a Computer Engineering (Co-op) student at the University of Guelph focused on embedded systems,
+              software–hardware integration, and applied engineering design. I like working close to the system level,
+              where code meets real constraints.
+            </p>
+
+            <p>
+              I’ve worked on automation and embedded systems in a manufacturing environment, improving monitoring logic
+              and analyzing real-time sensor data. My projects span FPGA design, full-stack development, and autonomous
+              hardware, including a VHDL-based ALU on FPGA, a Java/MySQL management system, and an Arduino-powered
+              autonomous wheelchair prototype.
+            </p>
+
+            <p>
+              I’m comfortable across C/C++, Java, Python, VHDL, and modern dev tools. I like building practical systems
+              that run outside the classroom.
+            </p>
           </div>
 
-          <div>
-            <h3>Frameworks &amp; Tools</h3>
-            <ul>
-              <li>Unity</li><li>.NET</li><li>JUnit</li><li>Pygame</li>
-            </ul>
-          </div>
+          <div class="about-skills about-skills-row">
+            <div>
+              <h3>Languages</h3>
+              <ul>
+                <li>C</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>SQL</li>
+                <li>C#</li>
+                <li>VHDL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+            </div>
 
-          <div>
-            <h3>Developer Tools</h3>
-            <ul>
-              <li>IntelliJ IDEA</li><li>CLion</li><li>Visual Studio</li><li>VS Code</li>
-              <li>GitHub</li><li>SolidWorks</li><li>Fusion 360</li><li>AutoCAD</li>
-            </ul>
-          </div>
+            <div>
+              <h3>Frameworks &amp; Engines</h3>
+              <ul>
+                <li>Unity</li>
+                <li>.NET</li>
+                <li>JUnit</li>
+                <li>Pygame</li>
+                <li>JavaFX</li>
+              </ul>
+            </div>
 
-          <div>
-            <h3>Libraries</h3>
-            <ul>
-              <li>pandas</li><li>NumPy</li>
-            </ul>
+            <div>
+              <h3>Developer Tools</h3>
+              <ul>
+                <li>IntelliJ IDEA</li>
+                <li>CLion</li>
+                <li>Visual Studio</li>
+                <li>Visual Studio Code</li>
+                <li>GitHub</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>CAD / Hardware</h3>
+              <ul>
+                <li>FPGA (Nexys-3)</li>
+                <li>SolidWorks</li>
+                <li>Fusion 360</li>
+                <li>AutoCAD</li>
+                <li>Arduino</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Libraries</h3>
+              <ul>
+                <li>pandas</li>
+                <li>NumPy</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <div class="container">
         <h2>Experience</h2>
@@ -89,11 +147,13 @@
           <img src="images/hartmann-logo.jpg" alt="Hartmann logo" class="experience-logo" loading="lazy" decoding="async" />
           <div class="experience-content">
             <h3>Production Engineering Intern</h3>
-            <p class="company">Hartmann North America – Brantford, ON</p>
-            <p class="dates">May 2025 – Aug 2025</p>
+            <p class="company">Hartmann Canada – Brantford, ON</p>
+            <p class="dates">May 2025 – Jun 2025</p>
             <ul>
-              <li>Operated and monitored automated manufacturing machines, reading sensor/panel data to resolve issues; cut downtime by 15%.</li>
-              <li>Used data checks to improve production monitoring; improved process consistency and output quality by ~10%.</li>
+              <li>Monitored automated systems and analyzed real-time sensor data, reducing downtime by 15%.</li>
+              <li>Improved production monitoring logic using embedded systems concepts, increasing output consistency by 10%.</li>
+              <li>Investigated recurring process failures and implemented corrective actions to improve system reliability.</li>
+              <li>Worked with cross-functional teams to implement process improvements and reduce manufacturing waste.</li>
             </ul>
           </div>
         </div>
@@ -105,40 +165,100 @@
             <p class="company">McMaster University – Hamilton, ON</p>
             <p class="dates">Apr 2023 – Jun 2023</p>
             <ul>
-              <li>Built educational tools in Unity (C#), working with faculty and peers to improve student engagement.</li>
-              <li>Built responsive web UI with HTML/CSS/JavaScript for 200+ users across devices.</li>
-              <li>Wrote modular, reusable code to simplify updates and new features.</li>
+              <li>Developed interactive educational games using C# and Unity to improve student engagement.</li>
+              <li>Built responsive web interfaces using HTML, CSS, and JavaScript, supporting 200+ users across devices.</li>
+              <li>Refactored code into reusable modules, improving maintainability and speeding up feature work.</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Projects</h2>
-        <p class="muted">Add 3–4 real projects here (GitHub links matter most).</p>
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects-section">
+  <div class="container">
+    <h2>Projects</h2>
+    <p class="muted projects-subtitle">A list of my projects and contributions:</p>
 
-        <div class="projects-grid">
-          <div class="project-box">
-            <h3>Project Title</h3>
-            <p>One sentence: what problem you solved and what you built.</p>
-            <a href="#">GitHub</a>
+    <div class="projects-grid projects-grid-cards">
+      <!-- Card 1 -->
+      <article class="p-card">
+        <div class="p-media">
+          <img src="images/FPGA.jpeg" alt="4-bit ALU on FPGA preview" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="p-panel">
+          <h3>4-Bit ALU Design and FPGA Implementation</h3>
+
+          <ul class="p-bullets">
+            <li>Built a modular 4-bit ALU in VHDL on a Nexys-3 FPGA.</li>
+            <li>Implemented add/sub/inc/dec and AND/OR/XOR/NOT.</li>
+            <li>Verified using a testbench and FPGA debugging.</li>
+          </ul>
+
+          <div class="p-tags">
+            <span>VHDL</span><span>FPGA</span><span>Digital Logic</span>
           </div>
-          <div class="project-box">
-            <h3>Project Title</h3>
-            <p>One sentence: what problem you solved and what you built.</p>
-            <a href="#">GitHub</a>
-          </div>
-          <div class="project-box">
-            <h3>Project Title</h3>
-            <p>One sentence: what problem you solved and what you built.</p>
-            <a href="#">GitHub</a>
+
+          <div class="p-links">
           </div>
         </div>
-      </div>
-    </section>
+      </article>
 
+      <!-- Card 2 -->
+      <article class="p-card">
+        <div class="p-media">
+          <img src="images/UMS.jpg" alt="University Management System preview" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="p-panel">
+          <h3>University Management System</h3>
+
+          <ul class="p-bullets">
+            <li>Full-stack portal for enrollment, scheduling, and faculty assignment.</li>
+            <li>Built a JavaFX dashboard and designed a MySQL schema.</li>
+            <li>Focused on clean CRUD flows and data integrity.</li>
+          </ul>
+
+          <div class="p-tags">
+            <span>Java</span><span>JavaFX</span><span>MySQL</span>
+          </div>
+
+          <div class="p-links">
+            <a class="p-link" href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="p-card">
+        <div class="p-media">
+          <img src="images/Aruino_Wheelchair _Prototype.jpeg" alt="Arduino wheelchair prototype preview" loading="lazy" decoding="async" />
+        </div>
+
+        <div class="p-panel">
+          <h3>Automated Arduino Wheelchair Prototype</h3>
+
+          <ul class="p-bullets">
+            <li>Built an autonomous prototype with sensor + motor control.</li>
+            <li>Improved stability using center-of-mass and tipping analysis.</li>
+            <li>Iterated mechanical layout in CAD.</li>
+          </ul>
+
+          <div class="p-tags">
+            <span>Arduino</span><span>C++</span><span>SolidWorks</span>
+          </div>
+
+          <div class="p-links">
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+    <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
@@ -167,7 +287,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>© 2025 Jared Duong | Made with HTML, CSS, and JavaScript</p>
+    <p>© 2026 Jared Duong | Made with HTML, CSS, and JavaScript</p>
   </footer>
 
   <script src="script.js" defer></script>
