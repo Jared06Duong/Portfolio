@@ -32,8 +32,10 @@
   --navy-border: rgba(11, 31, 58, 0.35);
 }
 
-html, body {
+html,
+body {
   height: 100%;
+  overflow-x: hidden; /* stops random sideways scroll on phones */
 }
 
 body {
@@ -55,7 +57,11 @@ body::before {
 /* Navbar */
 .navbar {
   background: var(--nav-bg);
-  padding: 1rem;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -68,6 +74,7 @@ body::before {
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .navbar a {
@@ -87,9 +94,9 @@ body::before {
 /* Sections */
 .section {
   min-height: 100vh;
-  padding: 80px 20px;
+  padding: calc(var(--nav-h) + 24px) 20px 80px;
   text-align: center;
-  scroll-margin-top: 90px;
+  scroll-margin-top: calc(var(--nav-h) + 18px);
 }
 
 .container {
@@ -97,9 +104,19 @@ body::before {
   margin: 0 auto;
 }
 
-h1 { font-size: 4rem; margin-bottom: 16px; }
-h2 { font-size: 2.5rem; margin-bottom: 24px; }
-.muted { color: var(--muted); }
+h1 {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+  line-height: 1.15;
+}
+.muted {
+  color: var(--muted);
+}
 
 /* Home */
 .profile-photo {
@@ -131,7 +148,7 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
 
 /* ABOUT: boxed panel */
 .about-section {
-  padding: 96px 20px;
+  padding: calc(var(--nav-h) + 24px) 20px 80px;
 }
 
 .about-box {
@@ -158,7 +175,7 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
   line-height: 1.7;
 }
 
-/* ✅ FIXED: Skills grid inside About (replaces flex-wrap) */
+/* Skills grid */
 .about-skills-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(220px, 1fr));
@@ -175,11 +192,15 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
 
 /* Make the 2nd row look intentional on wide screens (5 boxes) */
 @media (min-width: 1001px) {
-  .about-skills-row > div:nth-child(4) { grid-column: 2; }
-  .about-skills-row > div:nth-child(5) { grid-column: 3; }
+  .about-skills-row > div:nth-child(4) {
+    grid-column: 2;
+  }
+  .about-skills-row > div:nth-child(5) {
+    grid-column: 3;
+  }
 }
 
-/* FIX: headings readable on dark panel */
+/* Headings readable on dark panel */
 .about-box .about-skills-row h3 {
   color: #ffffff;
   margin-bottom: 8px;
@@ -195,9 +216,16 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
 }
 
 /* Experience */
-#experience { text-align: left; }
+#experience {
+  text-align: left;
+}
 
-.experience-item { display: flex; gap: 16px; margin-top: 24px; }
+.experience-item {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  align-items: flex-start;
+}
 
 .experience-logo {
   width: 70px;
@@ -206,13 +234,18 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
   object-fit: contain;
   background: #fff;
   padding: 6px;
+  flex: 0 0 auto;
 }
 
-.company { color: var(--muted-navy); }
-.dates { color: var(--muted); margin: 4px 0 12px; }
+.company {
+  color: var(--muted-navy);
+}
+.dates {
+  color: var(--muted);
+  margin: 4px 0 12px;
+}
 
 /* Projects */
-/* Projects card layout with photo slot */
 .projects-subtitle {
   margin-top: -10px;
   margin-bottom: 26px;
@@ -251,6 +284,7 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
   filter: saturate(0.95) contrast(1.05);
 }
@@ -333,14 +367,6 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
   transform: none;
 }
 
-/* Mobile */
-@media (max-width: 700px) {
-  .projects-grid-cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-
 /* Contact icons */
 .contact-icons {
   margin-top: 24px;
@@ -360,7 +386,9 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
   transition: transform 0.2s;
 }
 
-.contact-icons a:hover .icon { transform: scale(1.08); }
+.contact-icons a:hover .icon {
+  transform: scale(1.08);
+}
 
 /* Form */
 .contact-form {
@@ -381,6 +409,14 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
   font-size: 1rem;
 }
 
+/* prevent zoom on iOS when focusing inputs */
+@media (max-width: 700px) {
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+}
+
 .contact-form button {
   padding: 0.75rem 2rem;
   border-radius: 30px;
@@ -392,7 +428,9 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
   transition: background 0.2s;
 }
 
-.contact-form button:hover { background: var(--navy-hover); }
+.contact-form button:hover {
+  background: var(--navy-hover);
+}
 
 /* Footer */
 .site-footer {
@@ -412,7 +450,9 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
   border-radius: 8px;
   z-index: 2000;
 }
-.skip-link:focus { left: 10px; }
+.skip-link:focus {
+  left: 10px;
+}
 
 /* Responsive */
 @media (max-width: 1000px) {
@@ -422,10 +462,30 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
 }
 
 @media (max-width: 700px) {
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.7rem; }
+  /* fixed backgrounds are buggy on phones */
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
 
-  .experience-item { flex-direction: column; }
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+
+  .navbar ul {
+    gap: 1rem;
+  }
+
+  .navbar a {
+    font-size: 0.95rem;
+  }
+
+  .experience-item {
+    flex-direction: column;
+  }
 
   .about-box {
     padding: 1.6rem 1.2rem;
@@ -433,5 +493,18 @@ h2 { font-size: 2.5rem; margin-bottom: 24px; }
 
   .about-skills-row {
     grid-template-columns: 1fr;
+  }
+
+  .projects-grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo {
+    width: 170px;
+    height: 170px;
+  }
+
+  .p-panel h3 {
+    font-size: 1.05rem;
   }
 }
