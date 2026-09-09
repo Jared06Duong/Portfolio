@@ -10,7 +10,7 @@
     content="Jared Duong — Computer Engineering (Co-op) student at the University of Guelph. Embedded systems, FPGA/VHDL, software–hardware integration, and applied engineering design."
   />
 
-  <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="images/favicon.png" type="image/png" sizes="32x32" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,6 +29,8 @@
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#credentials">Credentials</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="Jared_Duong_Engineering_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li>
       </ul>
@@ -42,11 +44,12 @@
         src="Profile_Picture.jpg"
         alt="Portrait of Jared Duong"
         class="profile-photo"
-        loading="lazy"
+        fetchpriority="high"
         decoding="async"
       />
       <h1>Hi, I’m Jared Duong</h1>
-      <p>Computer Engineering (Co-op) at the University of Guelph</p>
+      <p>Third-Year Computer Engineering Co-op Student · University of Guelph</p>
+      <p class="availability">Seeking Winter &amp; Summer 2027 co-op opportunities</p>
       <a href="#contact" class="contact-btn">Contact Me</a>
     </section>
 
@@ -57,17 +60,10 @@
           <h2>About Me</h2>
 
           <div class="about-text">
-            <p>
-              I’m a Computer Engineering Co-op student at the University of Guelph focused on embedded systems, FPGA design, and low-level software.
-            </p>
-
-            <p>
-              In manufacturing, I worked with live sensor data and production monitoring systems, helping reduce downtime by 15% and improve output consistency by 10%. That experience shaped how I approach engineering.
-            </p>
-
-            <p>
-              My projects reflect that focus. I’ve designed and verified a VHDL-based ALU on FPGA, built a Java and MySQL management system with clean data flows, and developed an Arduino-based autonomous wheelchair prototype. I work mainly in C, C++, Java, Python, VHDL, and SQL, and I’m comfortable moving between hardware and software when needed.
-            </p>
+            <p>I’m a third-year Computer Engineering co-op student at the University of Guelph. I’m interested in software development, embedded systems, FPGA design, automation, and robotics.</p>
+            <p>I learn by building and testing. My projects include a 16-bit ALU in VHDL, a hand-soldered 64-LED cube, an Arduino wheelchair prototype, and a university management system built with Java and MySQL.</p>
+            <p>I’ve also worked on REST API integration between business systems and supported automated production at Hartmann Canada. On the University of Guelph Robotics Team, I work on mechanical components and their integration with electrical and software systems.</p>
+            <p>I’m looking for Winter and Summer 2027 co-op roles in software, embedded systems, hardware, firmware, automation, or robotics. Outside engineering, I’m into soccer, working out, and travelling.</p>
           </div>
 
           <div class="about-skills about-skills-row">
@@ -80,6 +76,7 @@
                 <li>Python</li>
                 <li>SQL</li>
                 <li>C#</li>
+                <li>Elm</li>
                 <li>VHDL</li>
                 <li>HTML</li>
                 <li>CSS</li>
@@ -105,7 +102,9 @@
                 <li>CLion</li>
                 <li>Visual Studio</li>
                 <li>Visual Studio Code</li>
-                <li>GitHub</li>
+                <li>Git &amp; GitHub</li>
+                <li>REST APIs</li>
+                <li>MySQL</li>
               </ul>
             </div>
 
@@ -117,6 +116,8 @@
                 <li>Fusion 360</li>
                 <li>AutoCAD</li>
                 <li>Arduino</li>
+                <li>Digital Logic</li>
+                <li>PCB Assembly &amp; Soldering</li>
               </ul>
             </div>
 
@@ -132,39 +133,13 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
     <section id="experience" class="section">
       <div class="container">
         <h2>Experience</h2>
-
-        <div class="experience-item">
-          <img src="images/hartmann-logo.jpg" alt="Hartmann logo" class="experience-logo" loading="lazy" decoding="async" />
-          <div class="experience-content">
-            <h3>Production Engineering Intern</h3>
-            <p class="company">Hartmann Canada – Brantford, ON</p>
-            <p class="dates">May 2025 – Jun 2025</p>
-            <ul>
-              <li>Monitored automated systems and analyzed real-time sensor data, reducing downtime by 15%.</li>
-              <li>Improved production monitoring logic using embedded systems concepts, increasing output consistency by 10%.</li>
-              <li>Investigated recurring process failures and implemented corrective actions to improve system reliability.</li>
-              <li>Worked with cross-functional teams to implement process improvements and reduce manufacturing waste.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="experience-item">
-          <img src="images/mcmaster-logo.jpg" alt="McMaster logo" class="experience-logo" loading="lazy" decoding="async" />
-          <div class="experience-content">
-            <h3>Game Developer</h3>
-            <p class="company">McMaster University – Hamilton, ON</p>
-            <p class="dates">Apr 2023 – Jun 2023</p>
-            <ul>
-              <li>Developed interactive educational games using C# and Unity to improve student engagement.</li>
-              <li>Built responsive web interfaces using HTML, CSS, and JavaScript, supporting 200+ users across devices.</li>
-              <li>Refactored code into reusable modules, improving maintainability and speeding up feature work.</li>
-            </ul>
-          </div>
-        </div>
+        <article class="experience-item"><div class="experience-content"><h3>Mechanical Team Member</h3><p class="company">University of Guelph Robotics Team · Guelph, ON</p><p class="dates">September 2024 – Present</p><ul><li>Design and build mechanical components for competition robots, focusing on structural stability and integration with electrical and software systems.</li><li>Work with electrical and software team members to integrate sensors, control hardware, and mechanical components.</li><li>Use SOLIDWORKS and AutoCAD to model and prototype parts, adjust designs after testing, and troubleshoot assembly issues.</li></ul></div></article>
+        <article class="experience-item"><div class="experience-content"><h3>Software Integration Developer</h3><p class="company">Appleby North Paint Inc. · Remote</p><p class="dates">January 2026 – March 2026</p><ul><li>Designed a REST-based integration between QuickBooks and Decor Fusion to automate sales and inventory data synchronization.</li><li>Mapped invoice and transaction data between systems and developed API-driven reporting workflows.</li><li>Created technical documentation to support maintenance and future updates.</li></ul></div></article>
+        <article class="experience-item"><div class="experience-content"><h3>Production Student</h3><p class="company">Hartmann Canada · Brantford, ON</p><p class="dates">May 2025 – June 2025</p><ul><li>Monitored automated production equipment and reviewed production data to identify recurring process issues.</li><li>Worked with operators and engineers to troubleshoot equipment and production problems.</li><li>Documented recurring issues and supported production monitoring and reporting.</li></ul></div></article>
+        <article class="experience-item"><div class="experience-content"><h3>Dining Room Server</h3><p class="company">LiUNA Station · Hamilton, ON</p><p class="dates">October 2022 – July 2026</p><ul><li>Provided service for weddings, banquets, and large events while handling multiple guest requests.</li><li>Worked with kitchen and event teams to keep service organized and resolve guest concerns.</li></ul></div></article>
       </div>
     </section>
 
@@ -172,22 +147,22 @@
     <section id="projects" class="section projects-section">
       <div class="container">
         <h2>Projects</h2>
-        <p class="muted projects-subtitle">A list of my projects and contributions:</p>
+        <p class="muted projects-subtitle">Software, embedded systems, robotics, and mechanical design.</p>
 
         <div class="projects-grid projects-grid-cards">
           <!-- Card 1 -->
           <article class="p-card">
             <div class="p-media">
-              <img src="images/FPGA.jpeg" alt="4-bit ALU on FPGA preview" loading="lazy" decoding="async" />
+              <img src="images/FPGA.jpeg" alt="16-bit ALU on FPGA preview" loading="lazy" decoding="async" />
             </div>
 
             <div class="p-panel">
-              <h3>4-Bit ALU Design and FPGA Implementation</h3>
+              <h3>16-Bit ALU Design and FPGA Implementation</h3>
 
               <ul class="p-bullets">
-                <li>Built a modular 4-bit ALU in VHDL on a Nexys-3 FPGA.</li>
+                <li>Built a modular 16-bit ripple-carry ALU in VHDL using reusable 1-bit slices.</li>
                 <li>Implemented add/sub/inc/dec and AND/OR/XOR/NOT.</li>
-                <li>Verified using a testbench and FPGA debugging.</li>
+                <li>Verified the design with a VHDL testbench, simulation, and Nexys-3 FPGA hardware.</li>
               </ul>
 
               <div class="p-tags">
@@ -226,7 +201,7 @@
           <!-- Card 3 -->
           <article class="p-card">
             <div class="p-media">
-              <!-- Rename this image file to remove the space, then update the src (mobile browsers are picky) -->
+              
               <img src="images/Arduino_Wheelchair_Prototype.jpeg" alt="Arduino wheelchair prototype preview" loading="lazy" decoding="async" />
             </div>
 
@@ -258,7 +233,7 @@
 
               <ul class="p-bullets">
                 <li>Hand-soldered 64 LEDs into a 4×4×4 grid and wired interconnects manually.</li>
-                <li>Designed and soldered a custom PCB for clean routing and reliable signal control.</li>
+                <li>Assembled and soldered the electronics on a custom PCB and designed a 3D-printed base.</li>
                 <li>Programmed an Arduino Nano using multiplexing for layer scanning and animations.</li>
               </ul>
 
@@ -295,6 +270,31 @@
             </div>
           </article>
 
+<article class="p-card"><div class="p-panel"><h3>Educational Games · McMaster School Program</h3><ul class="p-bullets"><li>Created interactive educational games for children through a teacher-led school program associated with McMaster University (April – June 2023).</li><li>Used Elm, C#, and Unity to develop games and interactive learning activities.</li><li>Built web interfaces using HTML, CSS, and JavaScript.</li></ul><div class="p-tags"><span>Elm</span><span>C#</span><span>Unity</span><span>Web Development</span></div></div></article>
+<article class="p-card"><div class="p-panel"><h3>Mechanical Reverse Engineering &amp; CAD Reconstruction</h3><ul class="p-bullets"><li>Reverse engineered an existing mechanical assembly and recreated it as a detailed CAD model.</li><li>Broke the assembly into components and studied their geometry, fit, and movement.</li><li>Rebuilt the assembly to examine mechanical relationships and component constraints.</li></ul><div class="p-tags"><span>SOLIDWORKS</span><span>CAD</span><span>Reverse Engineering</span><span>3D Modeling</span></div></div></article>
+<article class="p-card"><div class="p-panel"><h3>Kinder Egg Toy Reverse Engineering</h3><ul class="p-bullets"><li>Examined a Kinder Egg toy to understand how its parts, geometry, and mechanisms worked together.</li><li>Used the original toy as a reference for recreating and documenting its components.</li><li>Explored how small mechanical features affect assembly, movement, and function.</li></ul><div class="p-tags"><span>Reverse Engineering</span><span>Mechanical Design</span><span>Product Design</span></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section compact-section">
+      <div class="container">
+        <h2>Education</h2>
+        <div class="detail-panel">
+          <h3>University of Guelph</h3>
+          <p class="company">Bachelor of Engineering · Computer Engineering Co-op</p>
+          <p class="dates">September 2024 – Present · Third year</p>
+          <p>Relevant coursework: Data Structures, Discrete Structures, Object-Oriented Programming, Computer Architecture, Numerical Methods, Probability &amp; Statistics.</p>
+          <p>Activities: University of Guelph Robotics Team</p>
+        </div>
+      </div>
+    </section>
+    <section id="credentials" class="section compact-section">
+      <div class="container">
+        <h2>Certifications &amp; Learning</h2>
+        <div class="credentials-grid">
+          <article class="detail-panel"><h3>Certified SOLIDWORKS Associate (CSWA)</h3><p class="company">Dassault Systèmes</p><p>Mechanical design and 3D modeling in SOLIDWORKS.</p></article>
+          <article class="detail-panel"><h3>Agents and Workflows</h3><p class="company">OpenAI Academy</p><p>AI agents and repeatable workflows.</p></article>
         </div>
       </div>
     </section>
@@ -318,9 +318,9 @@
         </div>
 
         <form class="contact-form" action="https://formspree.io/f/xqadpbgp" method="POST">
-          <input type="text" name="name" placeholder="Your Name" autocomplete="name" required />
-          <input type="email" name="email" placeholder="Your Email" autocomplete="email" required />
-          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <input type="text" name="name" aria-label="Your name" placeholder="Your Name" autocomplete="name" required />
+          <input type="email" name="email" aria-label="Your email" placeholder="Your Email" autocomplete="email" required />
+          <textarea name="message" aria-label="Your message" rows="5" placeholder="Your Message" required></textarea>
           <button type="submit">Send Message</button>
         </form>
       </div>

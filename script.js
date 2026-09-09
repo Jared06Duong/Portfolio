@@ -1,49 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
   const nav = document.querySelector(".navbar");
-  const navHeight = nav ? nav.offsetHeight : 0;
-
-  const navLinks = Array.from(document.querySelectorAll('.navbar a[href^="#"]'));
-  const sections = Array.from(document.querySelectorAll("section[id]"));
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      const href = link.getAttribute("href");
-      if (!href || href === "#") return;
-
-      const target = document.querySelector(href);
-      if (!target) return;
-
-      e.preventDefault();
-
-      const y = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 12;
-      window.scrollTo({ top: y, behavior: "smooth" });
-
-      history.pushState(null, "", href);
-    });
-  });
-
-  const linkById = new Map(navLinks.map((a) => [a.getAttribute("href")?.slice(1), a]));
-
-  const setActive = (id) => {
-    navLinks.forEach((a) => a.classList.remove("active"));
-    const link = linkById.get(id);
-    if (link) link.classList.add("active");
+  const links = [...document.querySelectorAll('.navbar a[href^="#"]')];
+  const sections = links.map(link => document.getElementById(link.hash.slice(1))).filter(Boolean);
+  const updateHeight = () => {
+    document.documentElement.style.setProperty("--nav-h", `${nav?.offsetHeight || 72}px`);
   };
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries
-        .filter((e) => e.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-      if (visible?.target?.id) setActive(visible.target.id);
-    },
-    {
-      root: null,
-      rootMargin: `-${navHeight + 20}px 0px -60% 0px`,
-      threshold: [0.1, 0.2, 0.35, 0.5, 0.75]
+  updateHeight();
+  if (nav && "ResizeObserver" in window) new ResizeObserver(updateHeight).observe(nav);
+  const updateActive = () => {
+    const offset = (nav?.offsetHeight || 72) + 48;
+    let current = sections[0]?.id;
+    sections.forEach(section => {
+      if (section.getBoundingClientRect().top <= offset) current = section.id;
+    });
+    links.forEach(link => {
+      const active = link.hash === `#${current}`;
+      link.classList.toggle("active", active);
+      if (active) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  };
+  let scheduled = false;
+  window.addEventListener("scroll", () => {
+    if (!scheduled) {
+      scheduled = true;
+      requestAnimationFrame(() => { updateActive(); scheduled = false; });
     }
-  );
-
-  sections.forEach((s) => observer.observe(s));
+  }, { passive: true });
+  window.addEventListener("resize", updateActive);
+  links.forEach(link => link.addEventListener("click", event => {
+    const target = document.getElementById(link.hash.slice(1));
+    if (!target) return;
+    event.preventDefault();
+    updateHeight();
+    target.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+    history.pushState(null, "", link.hash);
+    target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
+  }));
+  updateActive();
 });
