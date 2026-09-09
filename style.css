@@ -35,7 +35,6 @@
 html,
 body {
   height: 100%;
-  overflow-x: hidden; /* stops random sideways scroll on phones */
 }
 
 body {
@@ -57,11 +56,11 @@ body::before {
 /* Navbar */
 .navbar {
   background: var(--nav-bg);
-  min-height: 72px;
+  height: var(--nav-h);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.8rem 1rem;
+  padding: 0 1rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -72,7 +71,7 @@ body::before {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 0.5rem 1.4rem;
+  gap: 2rem;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -178,7 +177,7 @@ h2 {
 /* Skills grid */
 .about-skills-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
   gap: 2rem;
   justify-items: start;
   align-items: start;
@@ -253,7 +252,7 @@ h2 {
 
 .projects-grid-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
 }
 
@@ -322,7 +321,7 @@ h2 {
 }
 
 .p-tags span {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   padding: 6px 10px;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -457,7 +456,7 @@ h2 {
 /* Responsive */
 @media (max-width: 1000px) {
   .about-skills-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
   }
 }
 
@@ -509,37 +508,69 @@ h2 {
   }
 }
 
-/* Expanded portfolio content */
-.availability { color: var(--muted-navy); margin-top: 1rem; }
-.navbar a { display: inline-block; padding: 0.35rem 0; }
-.navbar a.active { text-decoration: underline; text-underline-offset: 0.4rem; }
-.experience-item, .detail-panel {
-  background: rgba(0, 0, 0, 0.72);
-  border: 1px solid var(--soft-border);
-  border-radius: 14px;
-  padding: 1.5rem;
-  text-align: left;
+/* Keep the original navy photographic theme and improve flexible layouts. */
+html { scroll-behavior: smooth; }
+body { background-image: linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.68)), url("Background.jpg"); }
+body::before { display: none; }
+.navbar { height: auto; min-height: 72px; padding: 12px 16px; }
+.navbar a { display: inline-block; padding: 6px 0; }
+.navbar a.active { opacity: 1; text-decoration: underline; text-underline-offset: 7px; text-decoration-color: #91b9ef; }
+.navbar.has-indicator a.active { text-decoration: none; }
+.nav-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #91b9ef;
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 180ms ease, width 180ms ease;
 }
+.nav-indicator.is-visible { opacity: 1; }
+.availability { color: #c6ddff; margin: 22px auto 8px; font-weight: 700; }
+.hero-focus { color: var(--muted); }
+.secondary-btn { background: transparent; border: 1px solid #8197b4; margin-left: 10px; }
+.about-box { width: 100%; }
+.experience-item { background: rgba(0,0,0,.72); }
 .experience-content { min-width: 0; }
-.experience-content ul { padding-left: 1.2rem; color: var(--muted); }
-.experience-content li { margin-bottom: 0.5rem; }
-.p-card { display: flex; flex-direction: column; text-align: left; }
-.p-panel { flex: 1; padding: 1.4rem; }
-.p-media { flex-shrink: 0; }
-.p-card:not(:has(.p-media)) { border-top: 3px solid var(--muted-navy); }
-.detail-panel p + p { margin-top: 0.75rem; }
-.credentials-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-.compact-section { min-height: auto; }
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-  outline: 3px solid #9fb6d8; outline-offset: 4px;
-}
-h3, p, li { overflow-wrap: anywhere; }
+.project-category { color: #bad4fa; font-size: .875rem; margin-bottom: 12px; }
+.text-project .p-panel { justify-content: flex-start; padding: 28px; }
+.contact-form { text-align: left; gap: 10px; }
+.contact-form label { margin-top: 10px; }
+.contact-form input, .contact-form textarea { color: #0b1f3a; background: #fff; }
+.contact-form textarea { resize: vertical; }
+.contact-form button { margin-top: 12px; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #9fc7ff; outline-offset: 5px; }
 @media (max-width: 700px) {
-  .container, .about-box { width: 100%; }
-  .credentials-grid { grid-template-columns: 1fr; }
-  .navbar ul { gap: 0.3rem 1rem; }
-  .section { padding-right: 16px; padding-left: 16px; }
+  .navbar ul { gap: 4px 18px; }
+  .section { padding-left: 16px; padding-right: 16px; }
+  .container { width: 100%; }
+  .secondary-btn { margin-left: 0; }
+  .contact-btn { margin: 22px 4px 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+/* Project imagery and credentials */
+.p-card { display: flex; flex-direction: column; text-align: left; min-width: 0; }
+.p-panel { flex: 1; }
+.p-media { background: #f4f5f7; }
+.p-media img { object-fit: contain; filter: none; }
+.project-dates { color: #bad4fa; font-size: .875rem; margin-bottom: 10px; }
+.project-association { color: var(--muted-navy); font-size: .875rem; margin-bottom: 16px; }
+.certifications-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr)); gap: 24px; text-align: left; }
+.certification-card { padding: 24px; border: 1px solid var(--soft-border); border-radius: 16px; background: rgba(0,0,0,.78); min-width: 0; }
+.certification-card h3 { font-size: 1.15rem; line-height: 1.4; margin-bottom: 10px; }
+.certification-card > p { color: var(--muted); }
+.certification-card .credential-id { margin: 16px 0; font-size: .875rem; overflow-wrap: anywhere; }
+.certification-card .p-link { margin-top: 12px; }
+.experience-item { padding: 20px; border-radius: 12px; }
+.experience-content ul { padding-left: 20px; }
+
+#education { min-height: auto; }
+.detail-panel { background: rgba(0,0,0,.72); border: 1px solid var(--soft-border); border-radius: 14px; padding: 24px; text-align: left; }
+.detail-panel p + p { margin-top: 12px; }
+.p-media { flex-shrink: 0; }
