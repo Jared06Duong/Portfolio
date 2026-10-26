@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
     schedule();
   };
   if (nav && 'ResizeObserver' in window) new ResizeObserver(resize).observe(nav);
+  document.addEventListener('toggle', schedule, true);
+  if ('ResizeObserver' in window) new ResizeObserver(schedule).observe(document.querySelector('main'));
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', resize);
   window.addEventListener('hashchange', schedule);
@@ -47,3 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.fonts?.ready.then(resize);
   resize();
 });
+
